@@ -15,5 +15,18 @@ I have a Yeelight lamp and all apps that I've found did not worked with it, exce
 - Yeelight-Awesome - to discover, connect and send actions to the lamps on the network.
 - local-devices - to help to remove devices that aren't Yeelights.
 
-## Contribute
+## Compatibility
 
+> Should work anywhere compatible with Chrome v100.
+
+- Tested on MacOS Big Sur v11.6.6
+
+## What work
+
+- Turn lights on and off
+
+## TODO
+
+- Change color
+- Change brightness
+- Add actions to be triggered at specific time (ex. turn lights off at midnight)
