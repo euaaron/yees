@@ -1,0 +1,62 @@
+:root {
+  font-size: 16px;
+  --color-background: #272D3520;
+  --color-background-darker: #1C2128AB;
+  --color-background-lighter: #3d4754AB;
+  --color-foreground: #f2f2ff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: #f2f2ff20;
+    --color-foreground: #272D35;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  color: var(--color-foreground);
+}
+
+body {
+  font-family: -apple-system, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#panel {
+  width: calc(100% -1rem);
+  height: calc(100% -1rem);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding: .5rem;
+}
+
+.bulbCard {
+  border: none;
+  background: transparent;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: var(--color-foreground);
+}
+
+.bulbCard span {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.bulbCard:hover {
+  background: var(--color-background-lighter);
+}
