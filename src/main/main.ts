@@ -33,7 +33,6 @@ let vibrancy:
   | "under-page" = "dark";
 let win: BrowserWindow | null = null;
 let backgroundColor = "#272D3520";
-let isHidden: Boolean = false;
 let tray: Tray | null = null;
 const HEIGHT = 180;
 const WIDTH = 280;
@@ -88,7 +87,8 @@ async function createWindow() {
     y: getTrayPosition().y,
     webPreferences: {
       devTools: false,
-      nodeIntegration: true,
+      nodeIntegration: false,
+      backgroundThrottling: false,
       contextIsolation: true,
       experimentalFeatures: true,
       preload: path.join(__dirname, "preload.js"),
@@ -114,9 +114,8 @@ async function createWindow() {
   }
 
   win.addListener("blur", () => {
-    if (!isHidden) {
+    if (win?.isVisible()) {
       win?.hide();
-      isHidden = true;
     }
   });
 
@@ -169,12 +168,10 @@ function findTaskbarPosition(): string {
 }
 
 function toggleVisibility() {
-  if (isHidden) {
-    win?.show();
-    isHidden = false;
+  if (win?.isVisible()) {
+    win.hide();
   } else {
-    win?.hide();
-    isHidden = true;
+    win?.show();
   }
 }
 
