@@ -19,7 +19,9 @@ I have a Yeelight lamp and all apps that I've found did not worked with it, exce
 
 > Should work anywhere compatible with Chrome v100.
 
-- Tested on MacOS Big Sur v11.6.6
+- Tested with 
+  - MacOS Big Sur v11.6.6 and Monterey 12.5 Beta
+  - Windows 10 and 11
 
 ## What work
 
